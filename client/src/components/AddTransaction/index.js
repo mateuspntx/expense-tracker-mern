@@ -6,7 +6,7 @@ const AddTransaction = () => {
 
   const [showAddTransactionBox, setShowAddTransactionBox] = useState(false);
   const [text, setText] = useState('');
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
