@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
 import { useExpenseTracker } from '../../context/GlobalState';
 
 import Transaction from '../Transaction';
 
 const TransactionList = () => {
-  const { transactions } = useExpenseTracker();
+  const { transactions, getTransactions } = useExpenseTracker();
+
+  useEffect(() => {
+    getTransactions();
+  }, []);
 
   return (
     <>
@@ -13,7 +18,7 @@ const TransactionList = () => {
           <p className="no-transactions">No transactions yet</p>
         )}
         {transactions.map((transaction) => (
-          <Transaction key={transaction.id} transaction={transaction} />
+          <Transaction key={transaction._id} transaction={transaction} />
         ))}
       </ul>
     </>

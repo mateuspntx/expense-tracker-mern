@@ -1,4 +1,5 @@
 import { useExpenseTracker } from '../../context/GlobalState';
+import { formatNumber } from '../../utils/formatNumber';
 
 const Balance = () => {
   const { transactions } = useExpenseTracker();
@@ -9,7 +10,7 @@ const Balance = () => {
   return (
     <>
       <h4>Your Balance</h4>
-      <h1>${total}</h1>
+      <h1>${formatNumber(total)}</h1>
     </>
   );
 };
